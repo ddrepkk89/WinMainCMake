@@ -5,7 +5,7 @@
 # 加入各种包
 find_package(OpenMP REQUIRED)
 # 将源代码添加到此项目的可执行文件。
-add_executable (WinMainCMake "WinMainCMake.cpp" "WinMainCMake.h" "Resource.h" "targetver.h" "framework.h")
+add_executable (WinMainCMake "WinMainCMake.cpp" "WinMainCMake.h"  "targetver.h" "framework.h")
 
 # 设置win32 接入点
 set_target_properties(WinMainCMake PROPERTIES WIN32_EXECUTABLE TRUE)

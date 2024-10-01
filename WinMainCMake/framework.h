@@ -14,5 +14,4 @@
 #include <memory.h>
 #include <tchar.h>
 // 本程序相关项
-#include "Resource.h"
 #include <CommCtrl.h>
