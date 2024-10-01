@@ -1,6 +1,7 @@
 ﻿#include "WinMainCMake.h"
 #include "framework.h"
 #include <format>
+
 // The main window class name.
 static TCHAR szWindowClass[] = _T("DesktopApp");
 
@@ -192,7 +193,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         // in the top left corner.
         TextOut(textLabel,
             rECT.left + 5, rECT.top + 5,
-            ompMaxThread.c_str(), _tcslen(ompMaxThread.c_str()));
+            ompMaxThread.c_str(), static_cast<int>(_tcslen(ompMaxThread.c_str())));
         // End application-specific layout section.
         EndPaint(hWnd, &ps);
         break;
