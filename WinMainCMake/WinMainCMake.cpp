@@ -1,5 +1,6 @@
 ﻿#include "WinMainCMake.h"
 #include "framework.h"
+#include <format>
 // The main window class name.
 static TCHAR szWindowClass[] = _T("DesktopApp");
 
@@ -18,6 +19,8 @@ HDC textLabel;
 // Forward declarations of functions included in this code module:
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
+// Global attribute
+auto ompMaxThread = std::format("OpenMP max thread: {}", omp_get_max_threads());
 int WINAPI WinMain(
     _In_ HINSTANCE hInstance,
     _In_opt_ HINSTANCE hPrevInstance,
@@ -184,13 +187,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         PAINTSTRUCT ps;
         GetClientRect(hWnd, &rECT);
         textLabel = BeginPaint(hWnd, &ps);
-
         // Here your application is laid out.
         // For this introduction, we just print out "Hello, Windows desktop!"
         // in the top left corner.
         TextOut(textLabel,
             rECT.left + 5, rECT.top + 5,
-            _T("Program started"), _tcslen(_T("Program started")));
+            ompMaxThread.c_str(), _tcslen(ompMaxThread.c_str()));
         // End application-specific layout section.
         EndPaint(hWnd, &ps);
         break;

@@ -10,7 +10,7 @@ add_executable (WinMainCMake "WinMainCMake.cpp" "WinMainCMake.h"  "targetver.h" 
 # 设置win32 接入点
 set_target_properties(WinMainCMake PROPERTIES WIN32_EXECUTABLE TRUE)
 # 链接包
-target_link_libraries(WinMainCMake PUBLIC OpenMP::OpenMP_CXX)
+target_link_libraries(WinMainCMake PRIVATE ${OPENMP_LIBS})
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET WinMainCMake PROPERTY CXX_STANDARD 20)
