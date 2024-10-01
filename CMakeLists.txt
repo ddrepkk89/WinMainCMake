@@ -13,5 +13,6 @@ project ("WinMainCMake")
 # 设置c++版本
 set(CMAKE_CXX_STANDARD 20)
 
+
 # 包含子项目。
 add_subdirectory ("WinMainCMake")
