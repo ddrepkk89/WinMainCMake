@@ -1,11 +1,14 @@
 ﻿# CMakeList.txt: WinMainCMake 的 CMake 项目，在此处包括源代码并定义
 # 项目特定的逻辑。
 #
+
 # 加入各种包
 find_package(OpenMP REQUIRED)
 # 将源代码添加到此项目的可执行文件。
 add_executable (WinMainCMake "WinMainCMake.cpp" "WinMainCMake.h")
 
+# 设置win32 接入点
+set_target_properties(WinMainCMake PROPERTIES WIN32_EXECUTABLE TRUE)
 # 链接包
 target_link_libraries(WinMainCMake PUBLIC OpenMP::OpenMP_CXX)
 
