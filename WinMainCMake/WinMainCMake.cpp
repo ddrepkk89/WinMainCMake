@@ -1,7 +1,7 @@
 ﻿#include "WinMainCMake.h"
 #include "framework.h"
 #include <format>
-
+#include "onnxruntime_cxx_api.h"
 // The main window class name.
 static TCHAR szWindowClass[] = _T("DesktopApp");
 
